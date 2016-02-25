@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='connect4'>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="connect4.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+
+<body ng-controller="connect4">
+
+<div class="container" style="margin: 4em;">
+  <div id="gameContainer">
+    <div>
+      <div class="column" ng-repeat="column in board" ng-click="placeToken($index)">
+        <div ng-style="setStyling(val)" class="circle" ng-repeat="val in column track by $index">&nbsp</div>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+  <div class="input-group">
+    <button id="start_Game" ng-click="newGame()" class="btn btn-default">New Game</button>
+    <input ng-model="username" style="margin-left: 1em;margin-right: 1em;" placeholder="Enter your user name">
+    <span>Player Turn : {{turn}}</span>
+  </div>
+  <div style="margin-top: 0.5em;">
+    <button ng-click="initComputerGame()" class="btn btn-default">Play against Server</button>
+    <button ng-click="getServerMove()" class="btn btn-default">Get Move From Server</button>
+  </div>
+  <p> You: {{username}} (Red) </p>
+
+  <p> Opponent: {{opponent}} </p>
+
+  <h1 ng-show="winner">We have a winner: {{winner}}</h1>
+
+  <p style="color:red;">{{error}}</p>
+</div>
+</body>
+<script src="connect4.js"></script>
+</body>
+
+</html>
