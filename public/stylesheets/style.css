@@ -1,7 +1,15 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("http://www.adventuregamestudio.co.uk/images/games/1530.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
 }
+
+#playBtn{
+  font-size: 2em;
+}
+
 
 a {
   color: #00B7FF;

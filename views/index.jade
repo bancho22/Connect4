@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .span6
+
+    .span12
+      h1= title
+      h4= info
+      br
+      a(href="/app/connect4.html" class="btn btn-info" id="playBtn") Play
